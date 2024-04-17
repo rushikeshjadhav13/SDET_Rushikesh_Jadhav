@@ -13,7 +13,7 @@ public class BookUploader {
 	    private int booksSkipped;
 
 	    public BookUploader() {
-	        // Initialize HashSet to store existing ISBNs
+	        
 	        existingISBNs = new HashSet<>();
 	        booksAdded = 0;
 	        booksSkipped = 0;
@@ -27,18 +27,18 @@ public class BookUploader {
 	            while (scanner.hasNextLine()) {
 	                String line = scanner.nextLine();
 
-	                // Assuming CSV format: ISBN,Title,Author,etc.
+	              
 	                String[] bookData = line.split(",");
 
 	                if (bookData.length >= 1) {
 	                    String ISBN = bookData[0].trim();
 
 	                    if (!existingISBNs.contains(ISBN)) {
-	                        // Book is unique, add to the collection
+	                       
 	                        existingISBNs.add(ISBN);
 	                        booksAdded++;
 	                    } else {
-	                        // Book with duplicate ISBN, skip
+	                   
 	                        booksSkipped++;
 	                    }
 	                }
@@ -55,7 +55,7 @@ public class BookUploader {
 
 	    public static void main(String[] args) {
 	        BookUploader uploader = new BookUploader();
-	        String filePath = "C:\\Rushikesh Jadhav\\Book1.csv"; // Change this to the path of your file
+	        String filePath = "C:\\Rushikesh Jadhav\\Book1.csv"; 
 
 	        uploader.uploadBooks(filePath);
 	    }
