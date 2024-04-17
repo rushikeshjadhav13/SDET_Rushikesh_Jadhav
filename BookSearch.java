@@ -8,9 +8,9 @@ public class BookSearch {
 	private List<Book> libraryBooks;
 
 	public BookSearch() {
-		// Initialize the list of library books (assuming it's pre-populated)
+		
 		libraryBooks = new ArrayList<>();
-		// Add some sample books for demonstration
+		
 		libraryBooks
 				.add(new Book("The Great Gatsby", "F. Scott Fitzgerald", "9780743273565", "Horror", "13/05/2001", "3","2"));
 		libraryBooks.add(new Book("To Kill a Mockingbird", "Harper Lee", "9780061120084", "Romantic", "15/07/1994", "4","1"));
@@ -18,7 +18,7 @@ public class BookSearch {
 	}
 	
 	public static void displayBookDetails(Book book) {
-        // Display book details
+    
         System.out.println("Title: " + book.getTitle());
         System.out.println("Author: " + book.getAuthor());
         System.out.println("ISBN: " + book.getISBN());
@@ -32,7 +32,7 @@ public class BookSearch {
 	public List<Book> searchBooks(String searchTerm) {
 		List<Book> matchingBooks = new ArrayList<>();
 
-		// Perform linear search for each book property
+		
 		for (Book book : libraryBooks) {
 			if (book.getTitle().equalsIgnoreCase(searchTerm) || book.getAuthor().equalsIgnoreCase(searchTerm)
 					|| book.getISBN().equalsIgnoreCase(searchTerm) || book.getGenre().equalsIgnoreCase(searchTerm)
@@ -50,14 +50,14 @@ public class BookSearch {
         BookSearch searchSystem = new BookSearch();
         Scanner scanner = new Scanner(System.in);
 
-        // Prompt user to input search criteria
+       
         System.out.print("Enter search criteria (title, author, or ISBN): ");
         String searchTerm = scanner.nextLine();
 
-        // Perform search
+    
         List<Book> searchResults = searchSystem.searchBooks(searchTerm);
 
-        // Display search results
+   
         if (!searchResults.isEmpty()) {
             System.out.println("Search results for '" + searchTerm + "':");
             for (Book book : searchResults) {
@@ -70,10 +70,6 @@ public class BookSearch {
         scanner.close();
     }
 
-//	public List<Book> applyFilters(List<Book> searchResults, String genreFilter, String publicationDate) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 }
 
         
