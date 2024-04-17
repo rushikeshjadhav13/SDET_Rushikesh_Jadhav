@@ -7,9 +7,8 @@ public class BookFilter {
 	private List<Book> libraryBooks;
 
 	public BookFilter() {
-		// Initialize the list of library books (assuming it's pre-populated)
 		libraryBooks = new ArrayList<>();
-		// Add some sample books for demonstration
+		
 		libraryBooks.add(
 				new Book("The Great Gatsby", "F. Scott Fitzgerald", "9780743273565", "Horror", "13/05/2001", "3", "2"));
 		libraryBooks.add(
@@ -20,7 +19,7 @@ public class BookFilter {
 	public List<Book> searchBooks(String searchTerm) {
         List<Book> matchingBooks = new ArrayList<>();
         
-            // Check if the book matches the filter criteria
+            
         for(Book book : libraryBooks) {
             if (book.getTitle().equalsIgnoreCase(searchTerm)||
             		book.getAuthor().equalsIgnoreCase(searchTerm)||
@@ -39,7 +38,7 @@ public class BookFilter {
 		String searchTerm = "1984"; // Change this to your desired search term
 		List<Book> searchResults = searchSystem.searchBooks(searchTerm);
 
-		// Applying filters
+		
 		String genre = "Comedy"; // Change this to your desired genre
 		String publicationDate = " "; // Change this to your desired publication year, or -1 if not filtering by year
 
@@ -59,7 +58,7 @@ public class BookFilter {
 	public List<Book> applyFilters(List<Book> searchResults, String genre, String publicationDate) {
 		List<Book> filteredResults = new ArrayList<>();
 		for (Book book : searchResults) {
-			// Check if the book matches the filter criteria
+			
 			if ((genre == null || book.getGenre().equalsIgnoreCase(genre))
 					&& (publicationDate == " " || book.getPublicationDate() == publicationDate)) {
 				filteredResults.add(book);
